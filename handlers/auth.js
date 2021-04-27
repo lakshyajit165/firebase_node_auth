@@ -30,7 +30,7 @@ exports.signIn = (req, res) => {
     firebase.auth().signInWithEmailAndPassword(user.email, user.password)//firebase signin method
     .then(data => {
     console.log(JSON.stringify(data))
-    return data.user.getIdToken();
+    return data;
     }).then(token => {
     return res.json({ token })
     }).catch(err => {
@@ -49,16 +49,17 @@ exports.getNewToken = (req, res) => {
     // }).catch(function(error) {
     //     return res.status(500).send({ 'msg': 'Error' });
     // });
-    // firebase.auth()
-    console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+     //admin.auth().
+    //console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
     admin.auth().getUser('jKcAzPVXMxfTEQYYXVyHezEz2Dw1')
     .then(res => {
         console.log(res);
-        return res.status(200).send({ 'msg' :'Logged result'});
+        return res;
+        //return res.status(200).send({ 'msg' :'Logged result'});
     })
     .catch(function(error) {
         console.log(error);
-            return res.status(500).send({ 'msg': 'Error' });
+           // return res.status(500).send({ 'msg': 'Error' });
     });
     
 }

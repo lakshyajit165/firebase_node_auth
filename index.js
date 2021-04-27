@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 
 const dotenv = require("dotenv");
-dotenv.config();
+//dotenv.config();
 
 const firebaseConfig = require("./utils/config")
 const firebase = require("firebase");
